@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api")
+@git(origins = "http://localhost:4200")
 public class CouponController {
     @Autowired
     private CouponService couponService;
