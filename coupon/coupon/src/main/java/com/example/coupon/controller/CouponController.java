@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api")
-@git(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CouponController {
     @Autowired
     private CouponService couponService;
@@ -36,9 +36,9 @@ public class CouponController {
         couponService.deleteCoupon(code);
     }
 
-    @PutMapping("coupons")
-    public Coupon updateCoupon(@RequestBody CouponDTO couponDTO){
-        return couponService.updateCoupon(couponDTO);
+    @PutMapping("coupons/{code}")
+    public Coupon updateCoupon(@PathVariable String code,@RequestBody CouponDTO couponDTO){
+        return couponService.updateCoupon(code, couponDTO);
     }
 
     @PostMapping("coupons/consume")

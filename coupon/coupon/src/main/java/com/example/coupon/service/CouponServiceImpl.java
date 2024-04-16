@@ -46,8 +46,8 @@ public class CouponServiceImpl implements CouponService{
     }
 
     @Override
-    public Coupon updateCoupon(CouponDTO couponDTO) {
-        Coupon theCoupon = findByCode(couponDTO.getCode());
+    public Coupon updateCoupon(String couponCode, CouponDTO couponDTO) {
+        Coupon theCoupon = findByCode(couponCode);
         if (validToSave(couponDTO)) {
             // set new values //
             theCoupon.setCode(couponDTO.getCode());

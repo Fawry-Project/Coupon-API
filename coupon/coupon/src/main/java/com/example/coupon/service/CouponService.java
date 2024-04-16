@@ -10,7 +10,7 @@ public interface CouponService {
     List<Coupon> findAll();
     Coupon findByCode(String Code);
     Coupon createCoupon(CouponDTO couponDTO);
-    Coupon updateCoupon(CouponDTO couponDTO);
+    Coupon updateCoupon(String couponCode, CouponDTO couponDTO);
     void deleteCoupon(String code);
     Coupon consume(consumeCouponDTO chDTO);
 
